@@ -1,5 +1,14 @@
-import Marca
+class Marca:
 
+    def __init__(self,nombre):
+        self._nombre=nombre
+
+    def setNombre(self,nombre):
+        self.nombre=nombre
+
+    def getNombre(self):
+        return self.nombre
+    
 class TV:
     numTV=0
     def __init__ (self, marca, estado):
@@ -89,4 +98,35 @@ class TV:
 
            
 
+class Control:
 
+    def setTv(self, tv):
+        self.tv=tv
+    
+    def getTv(self):
+        return self.tv
+
+    def turnOn(self):
+        self.tv.turnOn()
+    
+    def turnOff(self):
+        self.tv.turnOff()
+
+    def canalUp(self):
+        self.tv.canalUp()
+
+    def canalDown(self):
+        self.tv.canalDown()
+
+    def volumenUp(self):
+        self.tv.volumenUp()
+
+    def volumenDown(self):
+        self.tv.volumenDown()
+    
+    def setCanal(self):
+        self.tv.setCanal()
+
+    def enlazar(self, tv):
+        self.tv=tv
+        tv.setControl(self)
